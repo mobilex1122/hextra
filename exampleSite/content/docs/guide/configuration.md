@@ -1,6 +1,8 @@
 ---
 title: Configuration
 weight: 2
+tags:
+  - Config
 ---
 
 Hugo reads its configuration from `hugo.yaml` in the root of your Hugo site.

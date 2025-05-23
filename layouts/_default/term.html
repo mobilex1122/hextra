@@ -8,7 +8,7 @@
         {{ if .Title }}<h1 class="hx:text-center hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">{{ .Title }}</h1>{{ end }}
         <div class="hx:mb-16"></div>
         <div class="content">
-          {{ .Content }}
+           {{ .Content }}
         </div>
         <div>
           {{- range .Pages -}}
@@ -21,9 +21,16 @@
                   title="{{ .LinkTitle }}"
                 >
                   {{ .Title }}
+                  {{ if eq .Section "docs" }}
+                    <span class="hx:text-none hx:inline-flex hx:gap-1 hx:items-center hx:rounded-full hx:px-2 hx:leading-6 hx:text-[.65rem] hx:border hx:text-gray-600 hx:bg-gray-100 hx:dark:bg-neutral-800 hx:dark:text-neutral-200 hx:border-gray-200 hx:dark:border-neutral-700 ">
+                      Docs
+                    </span>
+                  {{ end }}
                 </a>
+                {{ if .Date }}
+                   <p class="hx:opacity-50 hx:text-sm hx:leading-7">{{ partial "utils/format-date" .Date }}</p>
+                {{ end }}
               </h3>
-              <p class="hx:opacity-50 hx:text-sm hx:leading-7">{{ partial "utils/format-date" .Date }}</p>
             </div>
           {{- end -}}
         </div>
