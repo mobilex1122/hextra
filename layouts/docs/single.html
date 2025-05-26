@@ -8,7 +8,7 @@
         {{- if site.Params.docs.displayTags -}}
           {{ with .Params.tags }}
             <p class="hx:opacity-50 hx:text-sm hx:leading-7 hx:pt-4">
-              {{- range . }}<a class="hx:inline-block hx:mr-2" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>#{{ . }}</a>{{ end -}}
+              {{- range . }}<a class="hx:inline-block hx:mr-2" href='{{ .Site.BaseURL }}{{ "/tags/" | relLangURL }}{{ . | urlize }}'>#{{ . }}</a>{{ end -}}
             </p>
           {{ end -}}
         {{- end -}}
